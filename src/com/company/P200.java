@@ -47,3 +47,71 @@ public class P200 {
         return;
     }
 }
+
+// union find
+class Solution {
+    int[] parent;
+    int[] rank;
+    int count;
+    
+    public int numIslands(char[][] grid) {
+        if (grid == null || grid.length == 0 || grid[0].length == 0) {
+            return 0;
+        }
+        
+        int n = grid.length;
+        int m = grid[0].length; 
+        parent = new int[m * n];
+        rank = new int[m * n];
+         
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                parent[i * m + j] = i * m + j;
+                rank[i * m + j] = 0;
+                if (grid[i][j] == '1') {
+                    count++;
+                }
+            }
+        }
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                if (grid[i][j] == '1') {
+                    if (i > 0 && grid[i - 1][j] == '1') {
+                        union(i * m + j, (i - 1) * m + j);
+                    }
+                    if (j > 0 && grid[i][j - 1] == '1') {
+                        union(i * m + j, i * m + j - 1);
+                    }
+                }
+            }
+        }
+        return count;
+    }
+
+  
+    public int find(int x) {
+        if (x != parent[x]) {
+            parent[x] = find(parent[x]);
+        }    
+        return parent[x];
+    }
+    
+    public void union(int x, int y) {
+        x = find(x);
+        y = find(y);
+        if (x == y) {
+            return;
+        } else {
+            count--;
+            if(rank[x] < rank[y]) {
+                parent[x] = y;
+            } else {
+                parent[y] = x;
+                if (rank[x] == rank[y]) {
+                    rank[x]++;
+                }
+            }
+        }
+    }
+}
