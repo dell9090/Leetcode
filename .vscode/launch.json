@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - Solution",
+            "request": "launch",
+            "mainClass": "com.company.Solution",
+            "projectName": "Leetcode_da013d3d"
+        }
+    ]
+}

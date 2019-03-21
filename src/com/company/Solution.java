@@ -352,8 +352,9 @@ public static int countMatches(List<String> grid1, List<String> grid2) {
         map1b.add("1001");
         map1b.add("0011");
         map1b.add("0011");
-
-        System.out.println(tmp.countMatches(map1a, map1b));
+        int a = -1;
+        
+        System.out.println(((a>>>31)^1)&a);
 
 //       int ans  = tmp.findMaximumXOR(grid);
 //       System.out.print(ans);
