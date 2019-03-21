@@ -18,7 +18,8 @@ class Solution {
                 } else {
                     cur = dp[0]; 
                 }
-            } else if (s.charAt(i - 1) == '1' || (s.charAt(i - 1) == '2' && s.charAt(i) < '7')) {
+            } else if (s.charAt(i - 1) == '1' || 
+                        (s.charAt(i - 1) == '2' && s.charAt(i) < '7')) {
                 cur += dp[0];
             }
             dp[0] = dp[1];
