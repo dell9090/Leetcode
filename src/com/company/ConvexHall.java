@@ -19,7 +19,9 @@ class ConvexHall {
             int next = 0;
             for (int i = 0; i < points.length; i++) {
                 int orient = orientation(points[cur], points[i], points[next]);
-                if (orient < 0 || (orient == 0 && inBetween(points[cur], points[next], points[i]))) next = i;
+                if (orient < 0 || (orient == 0 && inBetween(points[cur], points[next], points[i]))) {
+                    next = i;
+                }
             }
             // add all collinear points in
             for (int i = 0; i < points.length; i++) {
