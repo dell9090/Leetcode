@@ -46,8 +46,8 @@ class Solution {
         if (root == null) {
             return null;
         }
-        TreeNode tl = lowestCommonAncestor(root.left,  p, q);
-        TreeNode tr = lowestCommonAncestor(root.right, p, q);
+        TreeNode tl = helper(root.left,  p, q);
+        TreeNode tr = helper(root.right, p, q);
         
         if (root == p || root == q) {
             if (tl != null || tr != null) {
