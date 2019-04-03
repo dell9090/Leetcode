@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - AmicableNumber",
+            "request": "launch",
+            "mainClass": "com.company.AmicableNumber",
+            "projectName": "Leetcode_da013d3d"
+        },
+        {
+            "type": "java",
             "name": "CodeLens (Launch) - Solution",
             "request": "launch",
             "mainClass": "com.company.Solution",
