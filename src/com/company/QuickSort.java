@@ -1,9 +1,11 @@
+package com.company;
+
 class Sort {
-    public quickSort(int[] nums) {
+    public void quickSort(int[] nums) {
         qSort(nums, 0, nums.length - 1);
     }
 
-    public qSort(int[] nums, int low, int high) {
+    public void qSort(int[] nums, int low, int high) {
         if (low < high) {
             int pivot = partition(nums, low, high);
             qSort(nums, low, pivot - 1);
