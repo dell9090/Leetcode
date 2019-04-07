@@ -87,4 +87,38 @@ class Solution {
 //     }
 // }
 
-//bfs iterate
+//bfs iterate 1ms 39.5mb
+
+// class Solution {
+//     public int maxDepth(TreeNode root) {
+//         class NodePair {
+//             public TreeNode node;
+//             public int depth;
+//             NodePair(TreeNode node, int depth) {
+//                 this.node = node;
+//                 this.depth = depth;
+//             }
+//         }
+        
+//         Queue<NodePair> queue = new LinkedList<>();
+//         NodePair cur = new NodePair(root, 1);
+        
+//         if (root == null) {
+//             return 0;
+//         }
+//         queue.offer(cur);
+        
+//         while (!queue.isEmpty()) {
+//             cur = queue.poll();
+//             if (cur.node.left != null) {
+//                 NodePair temp = new NodePair(cur.node.left, cur.depth + 1);
+//                 queue.offer(temp);
+//             }
+//             if (cur.node.right != null) {
+//                 NodePair temp = new NodePair(cur.node.right, cur.depth + 1);
+//                 queue.offer(temp);
+//             }
+//         }
+//         return cur.depth;
+//     }
+// }
