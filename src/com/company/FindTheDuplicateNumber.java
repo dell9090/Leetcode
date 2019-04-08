@@ -10,7 +10,7 @@ class Solution {
             if (low == high && lowCount > 1) {
                 return low;
             }
-            System.out.println(lowCount +" "+ low + " " + mid + " " + high);
+            
             if (lowCount > mid - low + 1) {
                 high = mid;
             } else {
@@ -35,3 +35,5 @@ class Solution {
     }
     
 }
+
+
