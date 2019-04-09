@@ -29,7 +29,9 @@ class MyHashMap {
         prev.next = prev.next.next;
     }
 
-    int idx(int key) { return Integer.hashCode(key) % nodes.length;}
+    int idx(int key) { 
+        return Integer.hashCode(key) % nodes.length;
+    }
 
     ListNode find(ListNode bucket, int key) {
         ListNode node = bucket, prev = null;
