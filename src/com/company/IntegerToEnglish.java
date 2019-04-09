@@ -13,11 +13,7 @@ class Solution {
         String words = "";
         while (num > 0) {
             if (num % 1000 != 0) {
-                if (words != "") {
-                    words = helper(num % 1000, num / 1000) + unit[i] + words;
-                } else {
-                    words = helper(num % 1000, num / 1000) + unit[i];
-                }
+                words = helper(num % 1000, num / 1000) + unit[i] + words;
             }
             num /= 1000;
             i++;
@@ -27,17 +23,15 @@ class Solution {
     
     private String helper(int num, int front) {
         if (num == 0) {
-            return "";
-        }   
-        else if (num < 20) {
-            return (front == 0? "": " ") + below20[num];
-        }        
-        else if (num < 100) {
-            return (front == 0? "": " ") + below100[num / 10] + helper(num % 10, num / 10);
+           return "";
+        } else if (num < 20) {
+            return (front == 0 ? "" : " ") + below20[num];
+        } else if (num < 100) {
+            return (front == 0 ? "" : " ") + below100[num / 10] + helper(num % 10, num / 10);
+        } else {
+            return (front == 0 ? "" : " ") + below20[num / 100] + " Hundred" + helper(num % 100, num / 100);
         }
-        else {
-            return (front == 0? "": " ") + below20[num / 100] + " Hundred" + helper(num % 100, num / 100);
-        }
+        
            
     }
 }
