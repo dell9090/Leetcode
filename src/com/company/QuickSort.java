@@ -12,6 +12,7 @@ class Sort {
             qSort(nums, pivot + 1, high);
         }
     }
+    
     private int partition(int[] nums, int low, int high) {
         int pivot = nums[low];
         while (low < high) {
