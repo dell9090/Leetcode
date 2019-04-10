@@ -13,21 +13,38 @@ class Sort {
         }
     }
     
+    // private int partition(int[] nums, int low, int high) {
+    //     int pivot = nums[low];
+    //     while (low < high) {
+    //         while (low < high && nums[high] >= pivot) {
+    //             --high;
+    //         }
+    //         nums[low] = nums[high];
+
+    //         while (low < high && nums[low] <= pivot) {
+    //             ++low;
+    //         }
+    //         nums[high] = nums[low];
+    //     }
+    //     nums[low] = pivot;    
+    //     return low;
+    // }
+
     private int partition(int[] nums, int low, int high) {
         int pivot = nums[low];
-        while (low < high) {
-            while (low < high && nums[high] >= pivot) {
-                --high;
+        int location = low;
+        for (int i = low + 1; i < nums.length; i++) {
+            if (nums[i] < pivot) {
+                swap(nums[i], nums[++location]);
             }
-            nums[low] = nums[high];
-
-            while (low < high && nums[low] <= pivot) {
-                ++low;
-            }
-            nums[high] = nums[low];
         }
-        nums[low] = pivot;    
-        return low;
+        swap(nums[low], nums[location]);    
+        return location;
+    }
+    private void swap(int a, int b) {
+        int temp = a;
+        a = b;
+        b = temp;
     }
 }
 
